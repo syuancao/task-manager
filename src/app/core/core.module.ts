@@ -8,6 +8,10 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     FooterComponent
   ],
+  exports: [
+    HeaderComponent,
+    FooterComponent
+  ],
   imports: [
     CommonModule
   ]
@@ -15,7 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parent: CommonModule) {
     if (parent) {
-      throw new Error('Index already exists, cannot be loaded again!')
+      throw new Error('CoreModule already exists, cannot be loaded again!')
     }
   }
 }
